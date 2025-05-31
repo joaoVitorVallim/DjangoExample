@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="text-center">Livro - {{book.title}}</h2>
+    <hr>
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header text-center">
+                {{book.title}}
+            </div>
+            <div class="card-body text-center">
+                <img src="https://www.kiama.com.br/wp-content/uploads/2023/03/livro-principal-1080x1080-1-600x600.png" style="width: 50%;">
+                <h5 class="card-title">{{book.genre}}, Ano: {{book.year}}</h5>
+                <p>{{book.description}}</p>
+                <hr>
+                <span>R$ {{book.value}}</span>
+            </div>
+        </div>
+        <br>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Voltar</a>
+        <a href="{% url 'update_book' book.id %}" class="btn btn-primary">Alterar dados</a>
+        <a href="{% url 'del_book' book.id %}" class="btn btn-danger">Excluir</a>
+    </div>
+    
+
+    
+{% endblock content %}
